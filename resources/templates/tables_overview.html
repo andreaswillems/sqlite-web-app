@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="columns">
+  <div class="column">
+    <article class="message is-warning">
+      <div class="message-header">
+        <p>Hinweis</p>
+      </div>
+      <div class="message-body">
+        Vor der Arbeit mit dieser Anwendung sollte sichergestellt sein, dass eine
+        <strong>Sicherungskopie</strong> der Datenbankdatei angelegt wurde.
+      </div>
+    </article>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column">
+    <div class="heading">
+      <h1 class="title">Übersicht: database.sqlite3</h1>
+      <h2 class="subtitle">Tabellen in der Datenbank</h2>
+    </div>
+  </div>
+</div>
+
+<div class="columns is-multiline">
+  {% for table in tables %}
+  <div class="column is-4">
+    <div class="box has-text-centered is-paddingless">
+      <a class="button is-white is-fullwidth is-size-3"
+         href="{{servlet_context}}/tables/{{table.name}}">{{ table.name }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

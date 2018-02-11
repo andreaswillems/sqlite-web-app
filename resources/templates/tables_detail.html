@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="columns">
+  <div class="column">
+    <article class="message is-danger">
+      <div class="message-header">
+        <p>Warnung</p>
+      </div>
+      <div class="message-body">
+        Die Veränderung oder das Löschen der Einträge wird unmittelbar in die Datenbankdatei geschrieben.
+        <br /> Jetzt wäre daher eine gute Gelegenheit zu überprüfen, ob eine
+        <strong>Sicherungskopie</strong> der Datenbankdatei angelegt wurde.
+      </div>
+    </article>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column">
+    <div class="notification is-error is-hidden" id="notification">
+      <button class="delete"></button>
+      Löschen fehlgeschlagen.
+    </div>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column">
+    <div class="heading">
+      <h1 class="title">Tabelle: {{ table_name }}</h1>
+      <h2 class="subtitle">Einträge in der Tabelle</h2>
+    </div>
+  </div>
+  <div class="column">
+    <div class="level">
+      <div class="level-left"></div>
+      <div class="level-right">
+        <div class="level-item">
+          <a class="button" href="{{servletContext}}/">zurück zur Übersicht</a>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="columns">
+  <div class="column">
+    <table class="table table is-bordered is-striped is-hoverable is-narrow is-fullwidth">
+      <thead>
+        <tr>
+          {% for name in column_names %}
+          <th>{{ name }}</th>
+          {% endfor %}
+          <th>Aktion</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for entry in entries %}
+        <tr>
+          {% for value in entry %}
+          <td>{{ value }}</td>
+          {% endfor %}
+          <td class="has-text-centered">
+            <a onclick="makeDeleteRequestTo('{{servlet_context}}/tables/{{table_name}}/{{entry|first}}', '{{column_names|first}}')"
+               class="button is-danger is-small"
+               title="Löschen">
+              <span class="icon is-small">
+                <i class="fas fa-times"></i>
+              </span>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
