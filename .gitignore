@@ -5,7 +5,6 @@
 pom.xml
 dev-config.edn
 test-config.edn
-*.jar
 *.class
 /.lein-*
 profiles.clj
