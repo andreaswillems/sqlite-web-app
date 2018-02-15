@@ -1,0 +1,16 @@
+2018-02-15 17:32:43,681 [main] INFO  sqlite-app.env - 
+-=[sqlite-app started successfully]=- 
+2018-02-15 17:32:45,017 [main] INFO  luminus.http-server - starting HTTP server on port 44444 
+2018-02-15 17:32:45,058 [main] INFO  sqlite-app.core - #'sqlite-app.config/env started 
+2018-02-15 17:32:45,058 [main] INFO  sqlite-app.core - #'sqlite-app.db.core/*db* started 
+2018-02-15 17:32:45,058 [main] INFO  sqlite-app.core - #'sqlite-app.handler/init-app started 
+2018-02-15 17:32:45,058 [main] INFO  sqlite-app.core - #'sqlite-app.handler/app started 
+2018-02-15 17:32:45,058 [main] INFO  sqlite-app.core - #'sqlite-app.core/http-server started 
+2018-02-15 17:32:45,058 [main] INFO  sqlite-app.core - #'sqlite-app.core/repl-server started 
+2018-02-15 17:33:12,040 [Thread-0] INFO  luminus.http-server - HTTP server stopped 
+2018-02-15 17:33:12,040 [Thread-0] INFO  sqlite-app.env - 
+-=[sqlite-app has shut down successfully]=- 
+2018-02-15 17:33:12,058 [Thread-0] INFO  sqlite-app.core - #'sqlite-app.core/repl-server stopped 
+2018-02-15 17:33:12,059 [Thread-0] INFO  sqlite-app.core - #'sqlite-app.core/http-server stopped 
+2018-02-15 17:33:12,059 [Thread-0] INFO  sqlite-app.core - #'sqlite-app.handler/init-app stopped 
+2018-02-15 17:33:12,059 [Thread-0] INFO  sqlite-app.core - #'sqlite-app.db.core/*db* stopped 
